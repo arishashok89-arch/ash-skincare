@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VCARE Beauty | Beauty & Skincare Store</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<!-- AOS Animation -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #ed4f91;
+    --darkpink: #bd2565;
+    --purple: #a76be0;
+    --cream: #fff7f8;
+    --dark: #32242d;
+    --green: #68b59b;
+    --orange: #ff9d64;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #333;
+}
+
+h1,h2,h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar {
+    background: white;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--darkpink) !important;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+.nav-link:hover {
+    color: var(--pink) !important;
+}
+
+.btn-pink {
+    background: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    transition: .3s;
+}
+
+.btn-pink:hover {
+    background: var(--darkpink);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.topbar {
+    background: #b92765;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+    background: linear-gradient(90deg, rgba(54,22,42,.70), rgba(54,22,42,.05)),
+    url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1800&q=85');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 65px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 500px;
+}
+
+.section-title {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #3d2934;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.category-card {
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    height: 270px;
+    transition: .4s;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.72));
+    display: flex;
+    align-items: end;
+    padding: 25px;
+    color: white;
+}
+
+/* PRODUCT */
+
+.product-card {
+    border: 1px solid #f1e4e9;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .3s;
+    background: white;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(221,77,132,.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    background: #fff6f8;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-name {
+    font-size: 17px;
+    font-weight: 600;
+    min-height: 45px;
+}
+
+.price {
+    color: var(--darkpink);
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.rating {
+    color: #ffb400;
+    font-size: 14px;
+}
+
+.discount {
+    background: #ff5794;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.cart-btn {
+    width: 100%;
+    background: #f9e2ed;
+    color: #a82a63;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.cart-btn:hover {
+    background: #d73579;
+    color: white;
+}
+
+/* OFFERS */
+
+.offer-banner {
+    background: linear-gradient(110deg, #8c37a8, #ed5293, #ff9569);
+    color: white;
+    padding: 65px 20px;
+    border-radius: 30px;
+}
+
+.offer-banner h2 {
+    font-size: 48px;
+}
+
+/* TABLE */
+
+.table-section {
+    background: #fff8fa;
+    padding: 70px 0;
+}
+
+.table thead {
+    background: #c72e72;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background: #fff0f5;
+}
+
+/* ABOUT */
+
+.about-section {
+    background: #f6efff;
+    padding: 75px 0;
+}
+
+.about-image {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* FEATURES */
+
+.feature-box {
+    text-align: center;
+    padding: 25px;
+    border-radius: 20px;
+    background: #fff4f8;
+    height: 100%;
+}
+
+.feature-box i {
+    font-size: 38px;
+    color: var(--pink);
+}
+
+.testimonial {
+    background: #fff1f5;
+    border-radius: 20px;
+    padding: 25px;
+    height: 100%;
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+    background: #382532;
+    color: white;
+    padding: 65px 20px;
+}
+
+.newsletter input {
+    border-radius: 30px;
+    padding: 13px;
+}
+
+/* LOCATION */
+
+.location-section {
+    background: #fff;
+    padding: 70px 0;
+}
+
+.map-frame {
+    border: 0;
+    border-radius: 20px;
+    width: 100%;
+    height: 350px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #241a21;
+    color: #ddd;
+    padding: 55px 0 20px;
+}
+
+footer h4 {
+    color: #ff7bb1;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ddd;
+}
+
+footer a:hover {
+    color: #ff79ad;
+}
+
+.social-icons a {
+    font-size: 22px;
+    margin-right: 12px;
+}
+
+.cart-counter {
+    background: #ed4f91;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.back-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ed4f91;
+    color: white;
+    border-radius: 50%;
+    padding: 12px 16px;
+    text-decoration: none;
+    z-index: 999;
+}
+
+@media(max-width:768px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .hero {
+        min-height: 470px;
+    }
+
+    .offer-banner h2 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP OFFER -->
+<div class="topbar">
+    ✨ VCARE BEAUTY FESTIVAL – EXTRA 10% OFF ON YOUR FIRST ORDER | FREE SHIPPING ABOVE ₹999 ✨
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+
+    <a class="navbar-brand" href="#">VCARE<span style="color:#f59ac0">.</span></a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+            <li class="nav-item ms-lg-3">
+                <button class="btn btn-pink" onclick="showCart()">
+                    <i class="bi bi-bag"></i> Cart
+                    <span class="cart-counter" id="cartCount">0</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7" data-aos="fade-right">
+            <span class="badge bg-light text-danger mb-3 p-2">YOUR BEAUTY, YOUR WAY</span>
+            <h1>Glow Naturally.<br>Feel Beautiful.</h1>
+            <p>Discover premium skincare, makeup and beauty essentials designed to make you shine every day.</p>
+            <a href="#products" class="btn btn-pink btn-lg mt-3">Explore Products <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-5">
+<div class="container">
+<div class="row g-4">
+    <div class="col-md-3" data-aos="fade-up">
+        <div class="feature-box">
+            <i class="bi bi-truck"></i>
+            <h5 class="mt-3">Fast Delivery</h5>
+            <p>Quick delivery across India</p>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-box">
+            <i class="bi bi-shield-check"></i>
+            <h5 class="mt-3">Quality Products</h5>
+            <p>Beauty essentials for everyday care</p>
+        </div>
+    </div>
+    <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-box">
+            <i class="bi bi-heart"></i>
+            <h5 class="mt-3">Made With Care</h5>
+            <p>Beauty and self-care made simple</p>
+        </div>
+    </div>
+    <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-box">
+            <i class="bi bi-credit-card"></i>
+            <h5 class="mt-3">Secure Payment</h5>
+            <p>Easy and secure checkout options</p>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="py-5" id="categories" style="background:#fff7fa;">
+<div class="container">
+    <h2 class="section-title" data-aos="fade-up">Shop By Category</h2>
+    <p class="section-subtitle">Find your everyday beauty essentials</p>
+
+    <div class="row g-4">
+        <div class="col-md-3" data-aos="zoom-in">
+            <a href="#products" class="text-decoration-none">
+                <div class="category-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-RAQ5LIP6EpyFHUgkQGryjmVlVomp8pg4eWfVMhqudQ&s=10" alt="Skincare">
+                    <div class="category-overlay"><h3>Skincare</h3></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+            <a href="#products" class="text-decoration-none">
+                <div class="category-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5nJzdGtbNLBfARVdYNYhITtGBGev8AzGMuHFYpBoXGQ&s=10" alt="Makeup">
+                    <div class="category-overlay"><h3>Makeup</h3></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+            <a href="#products" class="text-decoration-none">
+                <div class="category-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIKuKaVk6r7Bo72a_D7udZpCLgFoxYGwR7fRj5xbGJqQ&s=10" alt="Haircare">
+                    <div class="category-overlay"><h3>Haircare</h3></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+            <a href="#products" class="text-decoration-none">
+                <div class="category-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_3YLRwlVZhcfTTqd1h_cMN7c0FJaygHdczSUx7DvghA&s=10" alt="Body care">
+                    <div class="category-overlay"><h3>Body Care</h3></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- CAROUSEL -->
+<section class="py-5">
+<div class="container">
+    <h2 class="section-title">Beauty Spotlight</h2>
+    <p class="section-subtitle">Discover our customer-loved beauty picks</p>
+
+    <div id="beautyCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded-4">
+
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=1400&q=80" class="d-block w-100" style="height:350px;object-fit:cover" alt="Skincare">
+                <div class="carousel-caption">
+                    <h2>Love Your Skin</h2>
+                    <p>Discover a routine made for your glow</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1400&q=80" class="d-block w-100" style="height:350px;object-fit:cover" alt="Beauty makeup">
+                <div class="carousel-caption">
+                    <h2>Beauty That Inspires</h2>
+                    <p>Find your signature look</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1611930022073-b7a4c9c1d1e5?auto=format&fit=crop&w=1400&q=80" class="d-block w-100" style="height:350px;object-fit:cover" alt="Beauty products">
+            <div class="carousel-caption">
+                <h2>Everyday Self Care</h2>
+                <p>Little rituals, beautiful results</p>
+            </div>
+        </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#beautyCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#beautyCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="py-5" id="products">
+<div class="container">
+
+    <h2 class="section-title" data-aos="fade-up">Our Beauty Collection</h2>
+    <p class="section-subtitle">Shop skincare, makeup, haircare and more</p>
+
+    <div class="row g-4">
+
+        <!-- PRODUCT 1 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuXhwTUAhuOSe6Gwx48oPiUddUjle7jnyk-LVXO6S1Tw&s=10" alt="Face serum">
+                <div class="product-info">
+                    <span class="discount">20% OFF</span>
+                    <div class="rating">★★★★★</div>
+                    <div class="product-name">Vitamin C Face Serum</div>
+                    <p class="text-muted small">Brightening serum for daily skincare</p>
+                    <div class="price">₹599 <span class="old-price">₹749</span></div>
+                    <button class="cart-btn mt-3" onclick="addToCart('Vitamin C Face Serum',599)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm01Dd_X1fcRprwgwwKEUhYaitjM9OdUb-v8tMvBMlYA&s" alt="Face moisturizer">
+                <div class="product-info">
+                    <span class="discount">BESTSELLER</span>
+                    <div class="rating">★★★★★</div>
+                    <div class="product-name">Hydrating Face Moisturizer</div>
+                    <p class="text-muted small">Daily hydration and skin softness</p>
+                    <div class="price">₹449 <span class="old-price">₹550</span></div>
+                    <button class="cart-btn mt-3" onclick="addToCart('Face Moisturizer',449)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzW4RXa208MDEeVlHYmNGn6Lac_09Nqd2eBofRKY2Cbw&s=10" alt="Sunscreen">
+                <div class="product-info">
+                    <span class="discount">NEW</span>
+                    <div class="rating">★★★★☆</div>
+                    <div class="product-name">SPF 50 Sunscreen</div>
+                    <p class="text-muted small">Lightweight daily sun protection</p>
+                    <div class="price">₹399</div>
+                    <button class="cart-btn mt-3" onclick="addToCart('SPF 50 Sunscreen',399)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 4 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXhjRCZWEEwfyR_Mjpgp_iJltrzK-4ld4K1qUjdH-NVw&s=10" alt="Lipstick">
+                <div class="product-info">
+                    <span class="discount">15% OFF</span>
+                    <div class="rating">★★★★★</div>
+                    <div class="product-name">Velvet Matte Lipstick</div>
+                    <p class="text-muted small">Soft finish with rich colour</p>
+                    <div class="price">₹299 <span class="old-price">₹349</span></div>
+                    <button class="cart-btn mt-3" onclick="addToCart('Matte Lipstick',299)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 5 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR7R4xQDzp6s3WO75HyxHu0-7L2l7NYD6SrYN2njwp1Q&s=10" alt="Foundation">
+                <div class="product-info">
+                    <div class="rating">★★★★★</div>
+                <div class="product-name">Liquid Foundation</div>
+                <p class="text-muted small">Smooth natural coverage</p>
+                <div class="price">₹699</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Liquid Foundation',699)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 6 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeVn2bTDeH0I5vzYI7kqIrdMT0lfA7I0AeKv1VmO40Gg&s=10" alt="Hair shampoo">
+                <div class="product-info">
+                    <div class="rating">★★★★☆</div>
+                    <div class="product-name">Herbal Hair Shampoo</div>
+                    <p class="text-muted small">Fresh cleansing for your hair</p>
+                    <div class="price">₹349</div>
+                    <button class="cart-btn mt-3" onclick="addToCart('Herbal Shampoo',349)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 7 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx8zN-1rEwDvJe1J2U3XyukauGa8Sl9LLqdKGhoXUPBQ&s=10" alt="Face cleanser">
+                <div class="product-info">
+                    <span class="discount">POPULAR</span>
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Gentle Face Cleanser</div>
+                <p class="text-muted small">Daily cleansing for fresh skin</p>
+                <div class="price">₹299</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Face Cleanser',299)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 8 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX5FgR7VMqcHllcSLqSzi_KATBjV7QPxYNcXsnPP_cAg&s=10" alt="Face mask">
+                <div class="product-info">
+                <div class="rating">★★★★☆</div>
+                <div class="product-name">Glow Clay Face Mask</div>
+                <p class="text-muted small">Relaxing wash-off face mask</p>
+                <div class="price">₹499</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Clay Face Mask',499)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 9 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdg-4d0csrMeDLI7dh4jpgXYOYjKKvqmbJoUvQ1mC-rA&s=10" alt="Toner">
+                <div class="product-info">
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Rose Water Toner</div>
+                <p class="text-muted small">Refreshing toner for your routine</p>
+                <div class="price">₹249</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Rose Water Toner',249)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 10 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0NcludHAxXy0qXNVUy8ErN2F-JkIfxfivTO8GQZV-wg&s=10" alt="Perfume">
+                <div class="product-info">
+                <span class="discount">GIFT PICK</span>
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Bloom Floral Perfume</div>
+                <p class="text-muted small">Soft floral fragrance</p>
+                <div class="price">₹899</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Bloom Floral Perfume',899)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 11 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHwrcL3L22apThmBDk5RUyw4BemloylWMKXDFZ6AyJlQ&s=10" alt="Blush">
+                <div class="product-info">
+                <div class="rating">★★★★☆</div>
+                <div class="product-name">Peach Cream Blush</div>
+                <p class="text-muted small">Fresh peach colour for cheeks</p>
+                <div class="price">₹399</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Peach Blush',399)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 12 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-card">
+                <img src="https://juicychemistry.com/cdn/shop/files/DamaskRose_CoffeeEyeCream_1500x1500px_1_7db4e5fe-60bd-458a-97dd-63288f07353e.jpg?v=1783088172&width=1500" alt="Eye cream">
+                <div class="product-info">
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Under Eye Cream</div>
+                <p class="text-muted small">Gentle care for eye area</p>
+                <div class="price">₹549</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Under Eye Cream',549)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 13 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,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" alt="Hair conditioner">
+                <div class="product-info">
+                <div class="rating">★★★★☆</div>
+                <div class="product-name">Silky Hair Conditioner</div>
+                <p class="text-muted small">Soft and manageable hair care</p>
+                <div class="price">₹379</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Hair Conditioner',379)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 14 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBzHvW2xa0G_MCsqBTei_238_NgJzluK3b8Hyk7jR8IA&s=10" alt="Night cream">
+                <div class="product-info">
+                <span class="discount">15% OFF</span>
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Night Repair Cream</div>
+                <p class="text-muted small">Moisturizing night care cream</p>
+                <div class="price">₹649 <span class="old-price">₹759</span></div>
+                <button class="cart-btn mt-3" onclick="addToCart('Night Repair Cream',649)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 15 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqNTbh8hhTFhv4ebkK8YlMsv-4ZaYzN8UtnWzoxR-LFg&s=10" alt="Lip balm">
+                <div class="product-info">
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Shea Butter Lip Balm</div>
+                <p class="text-muted small">Daily lip moisturizing care</p>
+                <div class="price">₹199</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Shea Lip Balm',199)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 16 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5nJzdGtbNLBfARVdYNYhITtGBGev8AzGMuHFYpBoXGQ&s=10" alt="Makeup brush set">
+                <div class="product-info">
+                <span class="discount">NEW</span>
+                <div class="rating">★★★★☆</div>
+                <div class="product-name">Premium Makeup Brush Set</div>
+                <p class="text-muted small">Essential brushes for makeup looks</p>
+                <div class="price">₹799</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Makeup Brush Set',799)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 17 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_3YLRwlVZhcfTTqd1h_cMN7c0FJaygHdczSUx7DvghA&s=10" alt="Body lotion">
+                <div class="product-info">
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Vanilla Body Lotion</div>
+                <p class="text-muted small">Daily body moisturizing lotion</p>
+                <div class="price">₹399</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Body Lotion',399)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 18 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY8Tvps0lsZgQnvv0iEdFPfk7KzzvnEzHuPQXxTRR3UA&s=10" alt="Face scrub">
+                <div class="product-info">
+                <div class="rating">★★★★☆</div>
+                <div class="product-name">Gentle Face Scrub</div>
+                <p class="text-muted small">Refreshing exfoliating skincare</p>
+                <div class="price">₹329</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Face Scrub',329)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 19 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIKuKaVk6r7Bo72a_D7udZpCLgFoxYGwR7fRj5xbGJqQ&s=10" alt="Hair oil">
+                <div class="product-info">
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Nourishing Hair Oil</div>
+                <p class="text-muted small">Hair oil for scalp massage</p>
+                <div class="price">₹499</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Nourishing Hair Oil',499)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 20 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQymGJKriEcAvfPh1fk65ldAYz2Hpq20-tTxMUYKtozOw&s=10" alt="Aloe gel">
+                <div class="product-info">
+                <span class="discount">VALUE PICK</span>
+                <div class="rating">★★★★★</div>
+                <div class="product-name">Aloe Vera Skin Gel</div>
+                <p class="text-muted small">Lightweight refreshing skin gel</p>
+                <div class="price">₹279</div>
+                <button class="cart-btn mt-3" onclick="addToCart('Aloe Vera Gel',279)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- OFFERS -->
+<section class="py-5" id="offers">
+<div class="container">
+    <div class="offer-banner text-center" data-aos="zoom-in">
+        <h5>VCARE BEAUTY SPECIAL</h5>
+        <h2>Up to 40% OFF</h2>
+        <p class="fs-5">On selected skincare, makeup and haircare products</p>
+        <a href="#products" class="btn btn-light btn-lg text-danger rounded-pill mt-3">Shop Offers Now</a>
+    </div>
+</div>
+</section>
+
+<!-- PRODUCT COMPARISON TABLE -->
+<section class="table-section" id="comparison">
+<div class="container">
+    <h2 class="section-title">Beauty Product Comparison</h2>
+    <p class="section-subtitle">Compare popular VCARE products before shopping</p>
+
+    <div class="table-responsive shadow-sm rounded-4">
+        <table class="table table-bordered text-center align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Size</th>
+                    <th>Best For</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vitamin C Serum</td>
+                    <td>Skincare</td>
+                    <td>30 ml</td>
+                    <td>Daily skincare routine</td>
+                    <td>₹599</td>
+                    <td>★★★★★</td>
+                </tr>
+                <tr>
+                    <td>Face Moisturizer</td>
+                    <td>Skincare</td>
+                    <td>50 g</td>
+                    <td>Daily hydration</td>
+                    <td>₹449</td>
+                    <td>★★★★★</td>
+                </tr>
+                <tr>
+                    <td>SPF 50 Sunscreen</td>
+                    <td>Sun Care</td>
+                    <td>50 ml</td>
+                    <td>Sun protection</td>
+                    <td>₹399</td>
+                    <td>★★★★☆</td>
+                </tr>
+                <tr>
+                    <td>Matte Lipstick</td>
+                    <td>Makeup</td>
+                    <td>4 g</td>
+                    <td>Lip colour</td>
+                    <td>₹299</td>
+                    <td>★★★★★</td>
+                </tr>
+                <tr>
+                    <td>Herbal Shampoo</td>
+                    <td>Haircare</td>
+                    <td>200 ml</td>
+                    <td>Hair cleansing</td>
+                    <td>₹349</td>
+                    <td>★★★★☆</td>
+                </tr>
+                <tr>
+                    <td>Bloom Perfume</td>
+                    <td>Fragrance</td>
+                    <td>50 ml</td>
+                    <td>Floral fragrance</td>
+                    <td>₹899</td>
+                    <td>★★★★★</td>
+                </tr>
+                <tr>
+                    <td>Body Lotion</td>
+                    <td>Body Care</td>
+                    <td>200 ml</td>
+                    <td>Body hydration</td>
+                    <td>₹399</td>
+                    <td>★★★★★</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+<div class="container">
+<div class="row align-items-center g-5">
+
+    <div class="col-md-6" data-aos="fade-right">
+        <img class="about-image" src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=1000&q=80" alt="VCARE skincare collection">
+    </div>
+
+    <div class="col-md-6" data-aos="fade-left">
+        <span class="text-danger fw-bold">WELCOME TO VCARE</span>
+        <h2 class="display-5 my-3">Beauty Is More Than Skin Deep</h2>
+        <p>At VCARE, we believe beauty starts with taking care of yourself. We bring together skincare, makeup, haircare and body-care essentials to make your everyday beauty routine simple and enjoyable.</p>
+        <p>Our store is designed for everyone who loves self-care, quality beauty products and discovering something new.</p>
+
+        <div class="row text-center mt-4">
+            <div class="col-4">
+                <h3 class="text-danger">20+</h3>
+                <small>Products</small>
+            </div>
+            <div class="col-4">
+                <h3 class="text-danger">4+</h3>
+                <small>Categories</small>
+            </div>
+            <div class="col-4">
+                <h3 class="text-danger">100%</h3>
+                <small>Care</small>
+            </div>
+        </div>
+
+        <a href="#products" class="btn btn-pink mt-4">Explore VCARE</a>
+    </div>
+
+</div>
+</div>
+</section>
+
+<!-- CUSTOMER REVIEWS -->
+<section class="py-5">
+<div class="container">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-subtitle">Real beauty, happy customers</p>
+
+    <div class="row g-4">
+
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="testimonial">
+                <div class="rating mb-2">★★★★★</div>
+                <p>"I love the face serum. The website is easy to browse, and the product collection is beautiful."</p>
+                <h6>— Priya S.</h6>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial">
+                <div class="rating mb-2">★★★★★</div>
+                <p>"The lipstick collection has lovely shades. I found products for my daily makeup routine."</p>
+                <h6>— Meera R.</h6>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial">
+                <div class="rating mb-2">★★★★★</div>
+                <p>"Great beauty shopping experience with lots of choices in skincare and haircare."</p>
+                <h6>— Ananya K.</h6>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter text-center">
+<div class="container">
+    <h2 class="display-5">Join the VCARE Beauty Club</h2>
+    <p class="mt-3">Subscribe for beauty tips, new arrivals and exclusive offers.</p>
+
+    <form class="row justify-content-center mt-4" onsubmit="subscribe(event)">
+        <div class="col-md-5">
+            <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+        </div>
+        <div class="col-md-2 mt-2 mt-md-0">
+            <button class="btn btn-pink w-100" type="submit">Subscribe</button>
+        </div>
+    </form>
+</div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section" id="location">
+<div class="container">
+
+    <h2 class="section-title">Visit Our Beauty Store</h2>
+    <p class="section-subtitle">Shop online or visit our VCARE beauty store</p>
+
+    <div class="row g-4 align-items-center">
+
+        <div class="col-lg-5" data-aos="fade-right">
+            <div class="p-4 rounded-4" style="background:#fff0f6;">
+                <h3 class="text-danger">VCARE Beauty Store</h3>
+
+                <p><i class="bi bi-geo-alt-fill text-danger"></i>
+                <b>Address:</b><br>
+                VCARE Beauty & Cosmetics,<br>
+                Anna Nagar, Chennai,<br>
+                Tamil Nadu, India.
+                </p>
+
+                <p><i class="bi bi-telephone-fill text-danger"></i>
+                <b>Phone:</b> +91 98765 43210</p>
+
+                <p><i class="bi bi-envelope-fill text-danger"></i>
+                <b>Email:</b> hello@vcarebeauty.in</p>
+
+                <p><i class="bi bi-clock-fill text-danger"></i>
+                <b>Store Hours:</b><br>
+                Monday – Saturday: 10:00 AM – 9:00 PM<br>
+                Sunday: 11:00 AM – 8:00 PM</p>
+
+                <a href="https://www.google.com/maps/search/beauty+cosmetics+shops+Anna+Nagar+Chennai" target="_blank" class="btn btn-pink">
+                    <i class="bi bi-map"></i> Get Directions
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+            <iframe class="map-frame"
+            src="https://maps.google.com/maps?q=Anna%20Nagar%20Chennai&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            loading="lazy" allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <h2 style="color:#ff7bb1">VCARE.</h2>
+        <p>Discover beauty, celebrate yourself and make self-care part of your everyday life.</p>
+
+        <div class="social-icons mt-3">
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-pinterest"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <h4>Quick Links</h4>
+        <p><a href="#home">Home</a></p>
+        <p><a href="#categories">Categories</a></p>
+        <p><a href="#products">Shop Products</a></p>
+        <p><a href="#offers">Offers</a></p>
+        <p><a href="#about">About Us</a></p>
+    </div>
+
+    <div class="col-md-3">
+        <h4>Customer Care</h4>
+        <p><a href="#location">Contact Us</a></p>
+        <p><a href="#location">Store Location</a></p>
+        <p><a href="#comparison">Product Comparison</a></p>
+        <p><a href="#reviews">Customer Reviews</a></p>
+        <p>Shipping & Delivery</p>
+        <p>Returns & Refunds</p>
+    </div>
+
+    <div class="col-md-3">
+        <h4>Contact Information</h4>
+        <p><i class="bi bi-telephone"></i> +91 98765 43210</p>
+        <p><i class="bi bi-envelope"></i> hello@vcarebeauty.in</p>
+        <p><i class="bi bi-geo-alt"></i> Anna Nagar, Chennai, India</p>
+        <p><i class="bi bi-clock"></i> 10 AM – 9 PM</p>
+    </div>
+
+</div>
+
+<hr class="mt-4" style="border-color:#65515e">
+
+<div class="row">
+    <div class="col-md-6">
+        <p>© 2026 VCARE Beauty & Cosmetics. All rights reserved.</p>
+    </div>
+    <div class="col-md-6 text-md-end">
+        <p>Privacy Policy | Terms & Conditions | Payment Information</p>
+    </div>
+</div>
+
+</div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#home" class="back-top"><i class="bi bi-arrow-up"></i></a>
+
+<!-- CART MODAL -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+    <div class="modal-header" style="background:#ffeaf2">
+        <h5 class="modal-title">🛍️ Your VCARE Shopping Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+
+    <div class="modal-body">
+        <div id="cartItems">Your cart is empty.</div>
+        <hr>
+        <h5 class="text-end">Total: ₹<span id="cartTotal">0</span></h5>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+        <button class="btn btn-pink" onclick="checkout()">Checkout</button>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+AOS.init({
+    duration: 900,
+    once: true,
+    offset: 80
+});
+
+// CART
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+    cart.push({name:name, price:price});
+    total += price;
+
+    document.getElementById("cartCount").innerText = cart.length;
+
+    alert(name + " added to your cart!");
+}
+
+function showCart() {
+    let cartItems = document.getElementById("cartItems");
+    let cartTotal = document.getElementById("cartTotal");
+
+    if(cart.length === 0) {
+        cartItems.innerHTML = "Your cart is empty.";
+    } else {
+        let html = "<ul class='list-group'>";
+
+        cart.forEach((item, index) => {
+            html += `
+                <li class="list-group-item d-flex justify-content-between">
+                    ${index+1}. ${item.name}
+                    <strong>₹${item.price}</strong>
+                </li>`;
+        });
+
+        html += "</ul>";
+        cartItems.innerHTML = html;
+    }
+
+    cartTotal.innerText = total;
+
+    let modal = new bootstrap.Modal(document.getElementById('cartModal'));
+    modal.show();
+}
+
+function checkout() {
+    if(cart.length === 0) {
+        alert("Your cart is empty! Please add some products.");
+        return;
+    }
+
+    alert("Thank you for shopping at VCARE! Your total is ₹" + total + ". This demo checkout is not connected to payment.");
+}
+
+// NEWSLETTER
+function subscribe(event) {
+    event.preventDefault();
+    let email = document.getElementById("email").value;
+    alert("Thank you for subscribing to VCARE Beauty: " + email);
+    document.getElementById("email").value = "";
+}
+</script>
+
+</body>
+</html>
